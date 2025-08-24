@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "cafe S3 template"
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
+    DeletionPolicy: Retain
+Outputs:
+  BucketName:
+    Description: "The name of the S3 bucket"
+    Value: !Ref S3Bucket
+
+  WebsiteURL:
+    Description: "The S3 static website endpoint"
+    Value: !GetAtt S3Bucket.WebsiteURL
