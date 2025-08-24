@@ -24,4 +24,5 @@ jobs:
         run: |
           aws cloudformation deploy \
             --template-file main.yaml \
+            --stack-name CreateBucket \
             --capabilities CAPABILITY_NAMED_IAM
