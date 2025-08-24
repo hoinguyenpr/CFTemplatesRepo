@@ -23,6 +23,5 @@ jobs:
       - name: Deploy CloudFormation stack
         run: |
           aws cloudformation deploy \
-            --template-file s3.yaml \
-            --stack-name cafe-s3-stack \
+            --template-file main.yaml \
             --capabilities CAPABILITY_NAMED_IAM
