@@ -15,5 +15,5 @@ Outputs:
     Value: !Ref S3Bucket
 
   WebsiteURL:
-    Description: "The S3 static website endpoint"
+    Description: "The S3 static website endpointttt"
     Value: !GetAtt S3Bucket.WebsiteURL
