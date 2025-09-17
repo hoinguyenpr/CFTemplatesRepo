@@ -29,22 +29,22 @@ jobs:
             --template-file template/cafe-network.yaml \
             --capabilities CAPABILITY_NAMED_IAM
 
-  # app:
-  #   name: CafeAppPipeline
-  #   runs-on: ubuntu-latest
-  #   needs: infra # 👈 ensures this runs only after infra succeeds
-  #   steps:
-  #     - uses: actions/checkout@v3
+  app:
+    name: CafeAppPipeline
+    runs-on: ubuntu-latest
+    needs: infra # 👈 ensures this runs only after infra succeeds
+    steps:
+      - uses: actions/checkout@v3
 
-  #     - name: Configure AWS credentials
-  #       uses: aws-actions/configure-aws-credentials@v4
-  #       with:
-  #         role-to-assume: arn:aws:iam::<ACCOUNT-ID>:role/GitHubActionRole
-  #         aws-region: us-east-1
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::<ACCOUNT-ID>:role/GitHubActionRole
+          aws-region: us-east-1
 
-  #     - name: Deploy app stack
-  #       run: |
-  #         aws cloudformation deploy \
-  #           --stack-name update-cafe-app \
-  #           --template-file template/cafe-app.yaml \
-  #           --capabilities CAPABILITY_NAMED_IAM
+      - name: Deploy app stack
+        run: |
+          aws cloudformation deploy \
+            --stack-name update-cafe-app \
+            --template-file template/cafe-app.yaml \
+            --capabilities CAPABILITY_NAMED_IAM
