@@ -12,13 +12,11 @@ Parameters:
 
   InstanceTypeParameter:
     Type: String
-    Description: Enter t2.small, t2.medium, t3.small or t3.medium. Default is t2.small.
-    Default: t2.small
+    Description: Enter t3.small or t3.micro
+    Default: t3.small
     AllowedValues:
-      - t2.small
-      - t2.medium
       - t3.small
-      - t3.medium
+      - t3.micro
 
 Mappings:
   RegionMap:
